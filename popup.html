@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ClearRead</title>
+  <link rel="stylesheet" href="/src/popup/popup.css" />
+</head>
+<body>
+  <header>
+    <div>
+      <span class="status-dot" id="statusDot"></span>
+      <div>
+        <h1>ClearRead</h1>
+        <p class="tagline">On-device first · Cloud only when needed</p>
+      </div>
+    </div>
+    <button id="signIn" type="button">Sign in</button>
+  </header>
+
+  <div class="tabs" role="tablist">
+    <button type="button" role="tab" id="tabRead" aria-selected="true">Read</button>
+    <button type="button" role="tab" id="tabLib" aria-selected="false">Library</button>
+  </div>
+
+  <section id="readPane">
+    <nav id="tasks" aria-label="reading mode"></nav>
+    <p id="taskHint" class="hint"></p>
+    <div id="chip" class="chip" data-route="idle">Ready</div>
+    <main id="out" aria-live="polite"><p class="muted">Pick a mode, then run it on this page.</p></main>
+    <footer>
+      <label class="field">Reading level
+        <select id="level">
+          <option value="simple">Simple</option>
+          <option value="plain">Plain</option>
+          <option value="eli5">ELI5</option>
+        </select>
+      </label>
+      <label class="check"><input type="checkbox" id="useHistory" /> Compare with my saved notes</label>
+      <div class="actions">
+        <button id="run" type="button">Run</button>
+        <button id="save" type="button" disabled>Save</button>
+        <button id="copy" type="button" disabled>Copy</button>
+        <button id="apply" type="button" disabled>On page</button>
+      </div>
+    </footer>
+  </section>
+
+  <section id="libPane" hidden>
+    <ul id="library" class="library"></ul>
+    <p id="libEmpty" class="muted">Saved reads show up here. They stay on this device even if you are offline.</p>
+  </section>
+
+  <script type="module" src="/src/popup/popup.ts"></script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+{
+  "name": "clearread",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "license": "Apache-2.0",
+  "scripts": {
+    "dev": "vite build --watch",
+    "build": "tsc --noEmit && vite build && vite build --config vite.content.config.ts",
+    "test": "vitest run",
+    "serve": "firebase emulators:start"
+  },
+  "dependencies": {
+    "firebase": "^11.0.0"
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.3.7",
+    "@types/dom-chromium-ai": "^0.0.18",
+    "typescript": "^5.6.0",
+    "vite": "^6.0.0",
+    "vitest": "^2.1.0"
+  }
+}
